@@ -37,6 +37,17 @@ Ryshub:LaunchPanda({
 })
 ```
 
+Panda keyless example:
+
+```lua
+Ryshub.Options.Keyless = true
+Ryshub.Options.KeylessUI = false
+
+Ryshub:LaunchPanda({
+    ServiceID = "ryshub"
+})
+```
+
 Security note:
 
 - do not expose the direct URL of your main script in a public `OnSuccess` example
@@ -171,6 +182,7 @@ Ryshub:LaunchPanda({
 - `LaunchJunkie()`: validation through the Junkie SDK
 - `LaunchPanda()`: validation through PandaDevelopment
 - `LaunchPanda()` also accepts `FileName` and `StorageFileName` as optional overrides
+- `LaunchPanda()` supports `Options.Keyless` and `Options.KeylessUI`
 
 ## Helpers
 

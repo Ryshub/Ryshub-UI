@@ -2700,6 +2700,13 @@ function Ryshub:LaunchPanda(config)
 
     getgenv().RyshubClosed = false
     EnsureIconsReady(function()
+        if Ryshub.Options.Keyless == true then
+            if Ryshub.Options.KeylessUI == false then handleKeylessSkip() return end
+            BuildKeylessUI()
+            while not getgenv().SCRIPT_KEY do task.wait(0.1) end
+            return
+        end
+
         if Ryshub.Storage.AutoLoad then
             local savedKey = loadKey()
             if savedKey and savedKey ~= "" then
